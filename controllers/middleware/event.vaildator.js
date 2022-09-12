@@ -8,12 +8,7 @@ const eventSchema = Joi.object({
     time: Joi.string().required(),
     isFeatured: Joi.boolean().required(),
     description: Joi.string().required(),
-    ticketTypes: Joi.array().items(
-        Joi.object ({
-            name :Joi.string().required(),
-            price: Joi.number().required(),
-        })
-    ),
+    ticketTypes: Joi.array().items(Joi.string().required()),
     organizer: Joi.string().required(),
     category:Joi.string().required(),
 });

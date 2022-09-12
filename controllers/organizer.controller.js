@@ -34,7 +34,7 @@ export function updateOrganizer(req, res) {
     req.params.id,
     req.body,
     { returnDocument: 'after' },
-    (err, organizer) => {
+    (err, updated) => {
       if (err) {
         return res.status(500).json({
           message: 'issues updating organizer type',
@@ -42,7 +42,7 @@ export function updateOrganizer(req, res) {
       }
       return res.status(200).json({
         message: 'organizer type updated successfully',
-        organizer,
+        organizer: updated,
       });
     }
   );

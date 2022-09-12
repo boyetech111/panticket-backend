@@ -23,7 +23,7 @@ export function deleteCategory(req, res) {
      });
     } else {
      return res.status(200).json({
-       message: 'event category',
+       message: 'category deleted',
        category,
      });
     }
@@ -36,7 +36,7 @@ export function updateCategory(req, res) {
     {
       returnDocument: 'after',
     },
-    function(err, category) {
+    function(err, update) {
       if (err) {
         return res.status(500).json({
           message: 'unable to update cateogry',
@@ -44,7 +44,7 @@ export function updateCategory(req, res) {
       } else {
         return res.status(200).json({
           message: 'category updated',
-          category,
+          category: update,
         });
        }
     }

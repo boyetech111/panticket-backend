@@ -69,7 +69,7 @@ server.get('/tickettype', fetchticketType);
 server.post('/tickettype', validateTicketTypeData, createTicketType);
 server.get('/tickettype/:id', fetchTicketTypeById);
 server.put('/tickettype/:id', validateTicketTypeUpdateData, updateticketType);
-server.delete('/tickettype:id', deleteticketType);
+server.delete('/tickettype/:id', deleteticketType);
 
 
 // organizer route
